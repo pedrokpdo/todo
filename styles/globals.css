@@ -18,3 +18,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.divFooter {
+  width: 900px;
+  height: 50px;
+  margin-left: 230px;
+  font-size: 40px;
+}
+
+ul {
+  list-style:none;
+  text-decoration: underline;
+}

@@ -1,6 +1,7 @@
 import { Card } from 'antd'
 import type { NextPage } from 'next'
 import { useState } from 'react'
+import Footer from './Components/Footer'
 
 const Home: NextPage = ({ }: any) => {
   const [lista, setLista] = useState(['Tarefa Exemplo'])
@@ -23,7 +24,9 @@ const Home: NextPage = ({ }: any) => {
               novoVetor.splice(index, 1)
               setLista(novoVetor)
               const pValue = prompt('edite')
-              novoVetor.push(`${pValue}`)
+              novoVetor.push(`${pValue}`
+
+              )
 
 
 
@@ -41,24 +44,28 @@ const Home: NextPage = ({ }: any) => {
   }
 
   return (
-    <div style={{}}>
-      <div style={{ marginLeft: '500px' }}>
-        <h1 style={{ marginLeft: '110px' }}>Todo:</h1>
-        <div style={{ display: 'flex', flexDirection: 'column', width: '300px' }}>
-          <input style={{ marginBottom: '30px', height: '30px', borderRadius: '10px' }} type="text" placeholder='Nova Tarefa' onChange={(e) => {
-            const inputValue = e.target.value
-            setNovaLista(inputValue)
-          }}
-          />
+    <>
+      <div style={{}}>
+        <div style={{ marginLeft: '500px' }}>
+          <h1 style={{ marginLeft: '110px' }}>Todo:</h1>
+          <div style={{ display: 'flex', flexDirection: 'column', width: '300px' }}>
+            <input style={{ marginBottom: '30px', height: '30px', borderRadius: '10px' }} type="text" placeholder='Nova Tarefa' onChange={(e) => {
+              const inputValue = e.target.value
+              setNovaLista(inputValue)
+            }}
+            />
 
-          <button style={{ borderRadius: '10px', height: '30px' }} onClick={addTarefa}>Add Tarefa</button>
+            <button style={{ borderRadius: '10px', height: '30px' }} onClick={addTarefa}>Add Tarefa</button>
+          </div>
+        </div>
+        <div style={{}}>
+          <br />
+          {listaMapeada}
         </div>
       </div>
-      <div style={{}}>
-        <br />
-        {listaMapeada}
-      </div>
-    </div>
+
+      <Footer />
+    </>
   )
 }
 
